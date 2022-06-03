@@ -77,14 +77,6 @@ COMMIT;
 UPDATE departments SET manager_id = 201, location_id = 1800
 WHERE department_name = 'Sample_Dept';
 
-UPDATE departments SET 
-    manager_id = (SELECT manager_id 
-                  FROM departments 
-                  WHERE department_id = 40), 
-    location_id = (SELECT location_id
-                  FROM departments 
-                  WHERE department_id = 40)
-WHERE department_name = 'Sample_Dept';
 
 
 
