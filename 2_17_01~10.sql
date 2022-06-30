@@ -35,6 +35,11 @@ SELECT team_id 팀코드, player_name 선수명, position 포지션, back_no 백넘버, heig
 FROM player
 WHERE team_id = 'K07';
 
+CREATE VIEW v_player_team AS
+SELECT a.player_name, a.position, a.back_no, b.team_id, b.team_name
+FROM player a, team b
+WHERE b.team_id = a.team_id;
+
 SELECT player_name, position, back_no, team_id, team_name
 FROM v_player_team
 WHERE player_name LIKE '황%';
