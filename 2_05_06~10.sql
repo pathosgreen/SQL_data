@@ -2,18 +2,18 @@ SELECT NVL(NULL, 'NVL-OK') AS ISNULL_TEST FROM dual;
 
 SELECT NVL('Not-NULL', 'NVL-OK') AS ISNULL_TEST FROM dual;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, NVL(position,'¾øÀ½') NLÆ÷Áö¼Ç
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, NVL(position,'ì—†ìŒ') NLí¬ì§€ì…˜
 FROM player
 WHERE team_id = 'K08';
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç,
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜,
     CASE
-        WHEN position is NULL THEN '¾øÀ½'
+        WHEN position is NULL THEN 'ì—†ìŒ'
         ELSE position
-    END NLÆ÷Áö¼Ç
+    END NLí¬ì§€ì…˜
 FROM player
 WHERE team_id = 'K08';
 
-SELECT ename »ç¿ø¸í, sal ¿ù±Ş, comm Ä¿¹Ì¼Ç,
-    (sal*12)+comm ¿¬ºÀA,(sal*12)+NVL(comm,0) ¿¬ºÀB
+SELECT ename ì‚¬ì›ëª…, sal ì›”ê¸‰, comm ì»¤ë¯¸ì…˜,
+    (sal*12)+comm ì—°ë´‰A,(sal*12)+NVL(comm,0) ì—°ë´‰B
 FROM emp;

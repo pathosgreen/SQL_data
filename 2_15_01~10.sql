@@ -42,13 +42,13 @@ ON (b.deptno = a.deptno)
 JOIN dept_temp c
 ON c.deptno = b.deptno;
 
-SELECT a.player_name ¼±¼ö¸í, a.position Æ÷Áö¼Ç, b.team_name ¿¬°íÁö¸í, b.team_name ÆÀ¸í, c.stadium_name ±¸´Ü¸í
+SELECT a.player_name ì„ ìˆ˜ëª…, a.position í¬ì§€ì…˜, b.team_name ì—°ê³ ì§€ëª…, b.team_name íŒ€ëª…, c.stadium_name êµ¬ë‹¨ëª…
 FROM player a JOIN team b
 ON (b.team_id = a.team_id)
 JOIN stadium c
 ON c.stadium_id = b.stadium_id
 WHERE a.position = 'GK'
-ORDER BY ¼±¼ö¸í;
+ORDER BY ì„ ìˆ˜ëª…;
 
 SELECT b.stadium_name, b.stadium_id, a.sche_date, c.team_name, c.team_name, a.home_score, a.away_score
 FROM schedule a JOIN stadium b

@@ -1,22 +1,22 @@
--- ÇÕÁıÇÕ
+-- í•©ì§‘í•©
 SELECT department_id
 FROM employees
 UNION
 SELECT department_id
 FROM departments;
--- ÇÕÁıÇÕ(Áßº¹Æ÷ÇÔ)
+-- í•©ì§‘í•©(ì¤‘ë³µí¬í•¨)
 SELECT department_id
 FROM employees
 UNION ALL
 SELECT department_id
 FROM departments;
--- ±³ÁıÇÕ
+-- êµì§‘í•©
 SELECT department_id
 FROM employees
 INTERSECT
 SELECT department_id
 FROM departments;
--- Â÷ÁıÇÕ
+-- ì°¨ì§‘í•©
 SELECT department_id
 FROM employees
 MINUS
@@ -28,11 +28,11 @@ FROM employees A
 WHERE a.salary = (SELECT salary
                   FROM employees
                   WHERE last_name = 'De Haan');
--- À§ÀÇ ÄÚµå¿Í µ¿ÀÏÇÑ °á°ú°¡ Ãâ·ÂµÊ
+-- ìœ„ì˜ ì½”ë“œì™€ ë™ì¼í•œ ê²°ê³¼ê°€ ì¶œë ¥ë¨
 SELECT *
 FROM employees A
 WHERE a.salary = 17000;
---** ´ÙÁßÇà
+--** ë‹¤ì¤‘í–‰
 SELECT *
 FROM employees A
 WHERE a.salary IN (SELECT salary
@@ -41,7 +41,7 @@ WHERE a.salary IN (SELECT salary
 
 SELECT *
 FROM employees A
-WHERE a.salary IN(SELECT MIN(salary) ÀûÀÚ±Ş¿©
+WHERE a.salary IN(SELECT MIN(salary) ì ìê¸‰ì—¬
                   FROM employees
                   GROUP BY department_id
                   )
@@ -49,7 +49,7 @@ ORDER BY a.salary DESC;
 
 SELECT *
 FROM employees A
-WHERE (a.job_id, a.salary) IN(SELECT job_id,MIN(salary) ±×·ìº°±Ş¿©
+WHERE (a.job_id, a.salary) IN(SELECT job_id,MIN(salary) ê·¸ë£¹ë³„ê¸‰ì—¬
                            FROM employees
                            GROUP BY job_id
                            )
@@ -59,12 +59,12 @@ SELECT *
 FROM employees A,
                  (SELECT department_id
                   FROM departments
-                  WHERE department_name ='IT') B -- B´Â °¡»ó ºä(ÀÎ¶óÀÎ ºä) 
+                  WHERE department_name ='IT') B -- BëŠ” ê°€ìƒ ë·°(ì¸ë¼ì¸ ë·°) 
 WHERE a.department_id = b.department_id;
--- »ğÀÔ
+-- ì‚½ì…
 INSERT INTO departments(department_id,department_name,manager_id,location_id)
 VALUES(271,'Sample_Dept',200,1700);
--- È®ÀÎ
+-- í™•ì¸
 SELECT *
 FROM departments
 ORDER BY department_id DESC;

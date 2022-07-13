@@ -5,9 +5,9 @@ FROM DUAL;
 DESC DUAL;
 SELECT * FROM DUAL;
 
-SELECT CONCAT(player_name,' Ãà±¸¼±¼ö') AS ¼±¼ö¸í
+SELECT CONCAT(player_name,' ì¶•êµ¬ì„ ìˆ˜') AS ì„ ìˆ˜ëª…
 FROM player;
-SELECT player_name||' Ãà±¸¼±¼ö' AS ¼±¼ö¸í
+SELECT player_name||' ì¶•êµ¬ì„ ìˆ˜' AS ì„ ìˆ˜ëª…
 FROM player;
 
 SELECT stadium_id, DDD||')'||tel AS TEL, LENGTH(DDD||'-'||TEL) AS L_TEL 

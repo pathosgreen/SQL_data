@@ -1,25 +1,25 @@
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE height BETWEEN 170 AND 180;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position = NULL;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position IS NULL;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
       AND height >= 170;
       
-SELECT team_id ÆÀID, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ID, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id IN ('K02','K07') AND position = 'MF';
 
-SELECT team_id ÆÀID, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ID, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
    OR team_id = 'K07'
@@ -27,25 +27,25 @@ WHERE team_id = 'K02'
   AND height >= 170
   AND height <= 180;
   
-SELECT team_id ÆÀID, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ID, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE (team_id = 'K02' OR team_id = 'K07')
   AND position = 'MF'
   AND height >= 170
   AND height <= 180;
 
-SELECT team_id ÆÀID, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ID, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id IN ('K02','K07')
   AND position = 'MF'
   AND height BETWEEN 170 AND 180;
   
-SELECT team_id ÆÀID, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ID, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
   AND NOT position = 'MF'
   AND NOT height BETWEEN 175 AND 185;
   
-SELECT player_name ¼±¼ö¸í, nation ±¹Àû
+SELECT player_name ì„ ìˆ˜ëª…, nation êµ­ì 
 FROM player
 WHERE nation IS NOT NULL;

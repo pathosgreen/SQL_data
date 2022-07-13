@@ -1,8 +1,8 @@
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player a
 WHERE team_id = 'K02'
 INTERSECT
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player a
 WHERE position = 'GK'
 ORDER BY 1,2,3,4,5;

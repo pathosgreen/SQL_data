@@ -1,10 +1,10 @@
-SELECT a.player_name ¼±¼ö¸í, a.back_no ¹é³Ñ¹ö, b.region_name ¿¬°íÁö, b.team_name ÆÀ¸í
+SELECT a.player_name ì„ ìˆ˜ëª…, a.back_no ë°±ë„˜ë²„, b.region_name ì—°ê³ ì§€, b.team_name íŒ€ëª…
 FROM player a , team b
 WHERE a.position = 'GK'
 AND b.team_id = a.team_id
 ORDER BY a.back_no;
 
-SELECT player.player_name ¼±¼ö¸í, a.back_no ¹é³Ñ¹ö, b.region_name ¿¬°íÁö, b.team_name ÆÀ¸í
+SELECT player.player_name ì„ ìˆ˜ëª…, a.back_no ë°±ë„˜ë²„, b.region_name ì—°ê³ ì§€, b.team_name íŒ€ëª…
 FROM player a , team b
 WHERE a.position = 'GK'
 AND b.team_id = a.team_id
@@ -29,16 +29,16 @@ SELECT a.ename, a.job, a.sal, b.grade
 FROM emp a, salgrade b
 WHERE a.sal BETWEEN b.losal AND b.hisal;
 
-SELECT a.ename »ç¿ø¸í, a.sal ±Ş¿©, b.grade ±Ş¿©µî±Ş
+SELECT a.ename ì‚¬ì›ëª…, a.sal ê¸‰ì—¬, b.grade ê¸‰ì—¬ë“±ê¸‰
 FROM emp a, salgrade b
 WHERE a.sal BETWEEN b.losal AND b.hisal;
 
-SELECT a.player_name ¼±¼ö¸í, a.position Æ÷Áö¼Ç,
-       b.region_name ¿¬°íÁö, b.team_name ÆÀ¸í, c.stadium_name ±¸Àå¸í
+SELECT a.player_name ì„ ìˆ˜ëª…, a.position í¬ì§€ì…˜,
+       b.region_name ì—°ê³ ì§€, b.team_name íŒ€ëª…, c.stadium_name êµ¬ì¥ëª…
 FROM player a , team b, stadium c
 WHERE a.team_id = b.team_id
 AND c.stadium_id = b.stadium_id
-ORDER BY ¼±¼ö¸í;
+ORDER BY ì„ ìˆ˜ëª…;
 
 SELECT a.stadium_name, a.stadium_id, a.seat_count, a.hometeam_id, b.team_name
 FROM stadium a , team b

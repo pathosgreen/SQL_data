@@ -1,53 +1,53 @@
--- µÎ Å×ÀÌºíÀÇ ³»¿ëÀ» È®ÀÎ
+-- ë‘ í…Œì´ë¸”ì˜ ë‚´ìš©ì„ í™•ì¸
 select * from emp,dept;
--- emp Å×ÀÌºí¿¡¼­ »ç¿ø¹øÈ£, ÀÌ¸§, ¼Ò¼ÓºÎ¼­ ¹øÈ£ Á¶È¸
+-- emp í…Œì´ë¸”ì—ì„œ ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ì†Œì†ë¶€ì„œ ë²ˆí˜¸ ì¡°íšŒ
 SELECT empno,ename,deptno FROM emp;
--- emp Å×ÀÌºíÀÇ ºÎ¼­ ¹øÈ£ Á¾·ù¸¦ È®ÀÎ
+-- emp í…Œì´ë¸”ì˜ ë¶€ì„œ ë²ˆí˜¸ ì¢…ë¥˜ë¥¼ í™•ì¸
 SELECT DISTINCT deptno FROM emp;
--- »ç¿øÀÇ ¿¬°£ ÃÑ ¼öÀÔ Ãâ·Â
-SELECT ename, sal, (sal*12) ¿¬¼öÀÔ, comm FROM emp;
--- ±Þ¿© ±âÁØÀ¸·Î ³»¸²Â÷¼ø Á¤·Ä
+-- ì‚¬ì›ì˜ ì—°ê°„ ì´ ìˆ˜ìž… ì¶œë ¥
+SELECT ename, sal, (sal*12) ì—°ìˆ˜ìž…, comm FROM emp;
+-- ê¸‰ì—¬ ê¸°ì¤€ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 SELECT * FROM emp ORDER BY sal DESC;
 
 SELECT * FROM emp ORDER BY deptno DESC, sal;
--- emp Å×ÀÌºíÀÇ ÀüÃ¼ ¿­À» ºÎ¼­¹øÈ£(¿À¸§Â÷¼ø)¿Í ±Þ¿©(³»¸²Â÷¼ø)À¸·Î Á¤·Ä
+-- emp í…Œì´ë¸”ì˜ ì „ì²´ ì—´ì„ ë¶€ì„œë²ˆí˜¸(ì˜¤ë¦„ì°¨ìˆœ)ì™€ ê¸‰ì—¬(ë‚´ë¦¼ì°¨ìˆœ)ìœ¼ë¡œ ì •ë ¬
 SELECT ename,deptno,sal FROM emp ORDER BY deptno ASC, sal  DESC;
--- ºÎ¼­ ¹øÈ£°¡ 30ÀÎ Á÷¿ø¸¸ Ãâ·Â
+-- ë¶€ì„œ ë²ˆí˜¸ê°€ 30ì¸ ì§ì›ë§Œ ì¶œë ¥
 SELECT * FROM emp WHERE deptno = 30;
--- »ç¿ø ¹øÈ£°¡ 7900ÀÎ Á÷¿ø¸¸ Ãâ·Â
+-- ì‚¬ì› ë²ˆí˜¸ê°€ 7900ì¸ ì§ì›ë§Œ ì¶œë ¥
 SELECT * FROM emp WHERE empno = 7900;
--- ºÎ¼­¹øÈ£°¡ 30ÀÌ¸é¼­ jobÀÌ 'CLERK'ÀÎ Á÷¿ø
+-- ë¶€ì„œë²ˆí˜¸ê°€ 30ì´ë©´ì„œ jobì´ 'CLERK'ì¸ ì§ì›
 SELECT * FROM emp WHERE deptno = 30 AND job = 'CLERK';
--- ±Þ¿© ¿­¿¡ 12¸¦ °öÇÑ °ªÀÌ 36000ÀÎ Á÷¿øµé¸¸ Ãâ·Â
+-- ê¸‰ì—¬ ì—´ì— 12ë¥¼ ê³±í•œ ê°’ì´ 36000ì¸ ì§ì›ë“¤ë§Œ ì¶œë ¥
 SELECT * FROM emp WHERE sal*12 = 36000;
--- enameÀÌ Fº¸´Ù ÀÛ°Å³ª °°Àº Á÷¿øÀ» Ãâ·Â
+-- enameì´ Fë³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ì€ ì§ì›ì„ ì¶œë ¥
 SELECT * FROM emp WHERE ename <= 'FORD';
--- salÀÌ 3000ÀÌ ¾Æ´Ñ Á÷¿ø
+-- salì´ 3000ì´ ì•„ë‹Œ ì§ì›
 SELECT * FROM emp WHERE sal != 3000;
 SELECT * FROM emp WHERE sal <> 3000;
 SELECT * FROM emp WHERE sal ^= 3000;
 SELECT * FROM emp WHERE NOT sal = 3000;
--- ´ÙÀ½ ÄÚµå¸¦ Âª°Ô ÁÙ¿©¼­ Ç¥½Ã
+-- ë‹¤ìŒ ì½”ë“œë¥¼ ì§§ê²Œ ì¤„ì—¬ì„œ í‘œì‹œ
 SELECT * FROM emp WHERE job = 'MANAGER' OR job = 'SALESMAN' OR job = 'CLERK';
 
 SELECT * FROM emp WHERE job IN('MANAGER','SALESMAN','CLERK');
--- ´ÙÀ½ ÄÚµå¸¦ Âª°Ô ÁÙ¿©¼­ Ç¥½Ã
--- ±Þ¿© °ªÀÌ 2000ÀÌ»ó, 3000ÀÌÇÏ Á¶È¸
+-- ë‹¤ìŒ ì½”ë“œë¥¼ ì§§ê²Œ ì¤„ì—¬ì„œ í‘œì‹œ
+-- ê¸‰ì—¬ ê°’ì´ 2000ì´ìƒ, 3000ì´í•˜ ì¡°íšŒ
 SELECT * FROM emp WHERE sal >= 2000 AND sal <= 3000;
 
 SELECT * FROM emp WHERE sal BETWEEN 2000 AND 3000;
--- enameÀÌ S·Î ½ÃÀÛÇÏ´Â µ¥ÀÌÅÍ¸¸ Ãâ·Â
+-- enameì´ Së¡œ ì‹œìž‘í•˜ëŠ” ë°ì´í„°ë§Œ ì¶œë ¥
 SELECT * FROM emp WHERE ename LIKE 'S%';
--- enameÀÇ µÎ¹øÂ° ±ÛÀÚ°¡ LÀÎ »ç¿ø¸¸ Ãâ·Â
+-- enameì˜ ë‘ë²ˆì§¸ ê¸€ìžê°€ Lì¸ ì‚¬ì›ë§Œ ì¶œë ¥
 SELECT * FROM emp WHERE ename LIKE '_L%';
--- »ç¿ø ÀÌ¸§¿¡ AMÀÌ Æ÷ÇÔµÈ »ç¿ø µ¥ÀÌÅÍ¸¸ Ãâ·Â
+-- ì‚¬ì› ì´ë¦„ì— AMì´ í¬í•¨ëœ ì‚¬ì› ë°ì´í„°ë§Œ ì¶œë ¥
 SELECT * FROM emp WHERE ename LIKE '%AM%';
--- NULL¿¡ ´ëÇÑ ¿À·ù ÇØ°á
+-- NULLì— ëŒ€í•œ ì˜¤ë¥˜ í•´ê²°
 SELECT * FROM emp WHERE comm = NULL;
 
 SELECT * FROM emp WHERE comm IS NULL;
--- UNION(ÁýÇÕ¿¬»êÀÚ)
--- UNION ALL - Áßº¹°¡´É
+-- UNION(ì§‘í•©ì—°ì‚°ìž)
+-- UNION ALL - ì¤‘ë³µê°€ëŠ¥
 -- MINUS
 -- INTERSECT
 SELECT empno,ename,sal,deptno 
@@ -57,9 +57,14 @@ UNION
 SELECT empno,ename,sal,deptno 
 FROM emp 
 WHERE deptno = 20;
--- »ç¿ø ÀÌ¸§À» ´ë¹®ÀÚ,¼Ò¹®ÀÚ,Ã¹±ÛÀÚ ´ë¹®ÀÚ·Î Ãâ·Â
+-- ì‚¬ì› ì´ë¦„ì„ ëŒ€ë¬¸ìž,ì†Œë¬¸ìž,ì²«ê¸€ìž ëŒ€ë¬¸ìžë¡œ ì¶œë ¥
 SELECT ename, UPPER(ename), LOWER(ename), INITCAP(ename)
 FROM emp;
--- »ç¿ø ÀÌ¸§¿¡ SCOTT ´Ü¾î°¡ Æ÷ÇÔµÈ µ¥ÀÌÅÍ Ãâ·Â
-SELECT * FROM emp WHERE ename  'SCOT';
-SELECT * FROM emp WHERE ename IN 'SCOTT';
+-- ì‚¬ì› ì´ë¦„ì— SCOTT ë‹¨ì–´ê°€ í¬í•¨ëœ ë°ì´í„° ì¶œë ¥
+SELECT * 
+  FROM emp 
+  WHERE UPPER(ename) LIKE UPPER('%SCOTT%');
+-- ì‚¬ì› ì´ë¦„ì— SCOTTì¸ ë°ì´í„° ì¶œë ¥
+SELECT *
+  FROM emp
+  WHERE UPPER(ename) = UPPER('SCOTT');

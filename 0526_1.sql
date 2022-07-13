@@ -1,29 +1,29 @@
-SELECT * FROM employees; -- employeesÀÇ ¸ğµç Ç×¸ñ Ãâ·Â
+SELECT * FROM employees; -- employeesì˜ ëª¨ë“  í•­ëª© ì¶œë ¥
 
-SELECT employee_id,email FROM employees; -- employeesÀÇ employee_id,email¸¸ Ãâ·Â
+SELECT employee_id,email FROM employees; -- employeesì˜ employee_id,emailë§Œ ì¶œë ¥
 
-SELECT employee_id,first_name,last_name -- employee_id,first_name,last_name Ãâ·Â
-FROM employees -- employees¿¡¼­ Ãâ·Â
-ORDER BY employee_id DESC; -- employee_id¸¦ ³»¸²Â÷¼øÀ¸·Î Á¤·Ä
+SELECT employee_id,first_name,last_name -- employee_id,first_name,last_name ì¶œë ¥
+FROM employees -- employeesì—ì„œ ì¶œë ¥
+ORDER BY employee_id DESC; -- employee_idë¥¼ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 
-SELECT DISTINCT job_id FROM employees; -- employeesÀÇ job_id¸¦ Áßº¹ ¾øÀÌ(DISTINCT) Ãâ·Â
+SELECT DISTINCT job_id FROM employees; -- employeesì˜ job_idë¥¼ ì¤‘ë³µ ì—†ì´(DISTINCT) ì¶œë ¥
 
-SELECT employee_id AS »ç¿ø¹øÈ£,first_name AS ÀÌ¸§,last_name AS ¼º From employees;
--- employees¿¡¼­ employee_id,first_name,last_name¸¦ »ç¿ø¹øÈ£,ÀÌ¸§,¼ºÀ¸·Î Ãâ·Â
+SELECT employee_id AS ì‚¬ì›ë²ˆí˜¸,first_name AS ì´ë¦„,last_name AS ì„± From employees;
+-- employeesì—ì„œ employee_id,first_name,last_nameë¥¼ ì‚¬ì›ë²ˆí˜¸,ì´ë¦„,ì„±ìœ¼ë¡œ ì¶œë ¥
 
 SELECT employee_id,first_name||last_name FROM employees;
--- employees¿¡¼­ employee_id,first_name,last_name¿¡¼­ first_name,last_nameÀ» ºÙ¿©¼­ Ãâ·Â
+-- employeesì—ì„œ employee_id,first_name,last_nameì—ì„œ first_name,last_nameì„ ë¶™ì—¬ì„œ ì¶œë ¥
 
 SELECT first_name||' '||last_name,email||'@company.com' FROM employees;
--- employees¿¡¼­ first_name,last_nameÀ» ºÙÀÌµÇ °ø¹éÀ» ³Ö¾î¼­ Ãâ·ÂÇÏ°í email¿¡ @company.comÀ» ºÙ¿©¼­ Ãâ·Â
+-- employeesì—ì„œ first_name,last_nameì„ ë¶™ì´ë˜ ê³µë°±ì„ ë„£ì–´ì„œ ì¶œë ¥í•˜ê³  emailì— @company.comì„ ë¶™ì—¬ì„œ ì¶œë ¥
 
 SELECT employee_id,salary,salary+500,salary-100,(salary*1.1)/2 FROM employees;
 
-SELECT employee_id AS »ç¿ø¹øÈ£,
-       salary AS ±Ş¿©,
-       salary+500 AS Ãß°¡±Ş¿©,
-       salary-100 AS ÀÎÇÏ±Ş¿©,
-       (salary*1.1)/2 AS Á¶Á¤±Ş¿© 
+SELECT employee_id AS ì‚¬ì›ë²ˆí˜¸,
+       salary AS ê¸‰ì—¬,
+       salary+500 AS ì¶”ê°€ê¸‰ì—¬,
+       salary-100 AS ì¸í•˜ê¸‰ì—¬,
+       (salary*1.1)/2 AS ì¡°ì •ê¸‰ì—¬ 
 FROM employees;
 
 SELECT * FROM employees WHERE employee_id = 100;

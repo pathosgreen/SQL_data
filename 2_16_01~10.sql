@@ -34,45 +34,45 @@ SELECT *
 FROM dept a FULL JOIN dept_temp b
 ON b.deptno = a.deptno;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„
 FROM player
 WHERE team_id = (SELECT team_id
                  FROM player
-                 WHERE player_name = 'Á¤³²ÀÏ')
+                 WHERE player_name = 'ì •ë‚¨ì¼')
 ORDER BY player_name;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„
 FROM player
 WHERE height <= (SELECT AVG (height)
                  FROM player)
 ORDER BY player_name;
 
-SELECT region_name ¿¬°íÁö¸í, team_name ÆÀ¸í, e_team_name ¿µ¹®ÆÀ¸í
+SELECT region_name ì—°ê³ ì§€ëª…, team_name íŒ€ëª…, e_team_name ì˜ë¬¸íŒ€ëª…
 FROM team
 WHERE team_id = (SELECT team_id
                  FROM player
-                 WHERE player_name = 'Á¤Çö¼ö')
+                 WHERE player_name = 'ì •í˜„ìˆ˜')
 ORDER BY team_name;
 
-SELECT region_name ¿¬°íÁö¸í, team_name ÆÀ¸í, e_team_name ¿µ¹®ÆÀ¸í
+SELECT region_name ì—°ê³ ì§€ëª…, team_name íŒ€ëª…, e_team_name ì˜ë¬¸íŒ€ëª…
 FROM team
 WHERE team_id IN (SELECT team_id
                  FROM player
-                 WHERE player_name = 'Á¤Çö¼ö')
+                 WHERE player_name = 'ì •í˜„ìˆ˜')
 ORDER BY team_name;
 
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE (team_id, height) IN (SELECT team_id, MIN(height)
                             FROM player
                             GROUP BY team_id)
 ORDER BY team_id, player_name;
 
-SELECT b.team_name ÆÀ¸í, a.player_name ¼±¼ö¸í, a.position Æ÷Áö¼Ç, a.back_no ¹é³Ñ¹ö, a.height Å°
+SELECT b.team_name íŒ€ëª…, a.player_name ì„ ìˆ˜ëª…, a.position í¬ì§€ì…˜, a.back_no ë°±ë„˜ë²„, a.height í‚¤
 FROM player a, team b
 WHERE a.height < (SELECT AVG (x.height)
                   FROM player x
                   WHERE x.team_id = a.team_id
                   GROUP BY x.team_id)
-ORDER BY ¼±¼ö¸í;
+ORDER BY ì„ ìˆ˜ëª…;
 

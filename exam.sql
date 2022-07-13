@@ -9,14 +9,14 @@ CREATE TABLE t_member (
 );
 
 insert into t_member
-values('lee','1212','ÀÌ¼ø½É','lee@test.com',SYSDATE);
+values('lee','1212','ì´ìˆœì‹¬','lee@test.com',SYSDATE);
 insert into t_member
-values('kim','1212','±èÀ¯½Å','kim@test.com',SYSDATE);
+values('kim','1212','ê¹€ìœ ì‹ ','kim@test.com',SYSDATE);
 insert into t_member
-values('park','1212','¹ÚÀç»ó','pack@test.com',SYSDATE);
+values('park','1212','ë°•ì¬ìƒ','pack@test.com',SYSDATE);
 
 SELECT * FROM t_member;
 
-UPDATE t_member SET name='ÀÌ¼ø½Å' WHERE id ='lee';
+UPDATE t_member SET name='ì´ìˆœì‹ ' WHERE id ='lee';
 
 DELETE FROM t_member WHERE id='lee';

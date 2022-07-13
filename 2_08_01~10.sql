@@ -1,21 +1,21 @@
--- ¿À·ù ¹ß»ı ¹öÀü
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+-- ì˜¤ë¥˜ ë°œìƒ ë²„ì „
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = K02;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02';
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position = 'MF';
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE height >= 170;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id IN ('K02','K07');
 
@@ -27,14 +27,14 @@ SELECT ename,job,deptno
 FROM emp
 WHERE job IN ('MANAGER','CLERK') AND deptno IN (20,30);
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position LIKE 'MF';
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
-WHERE player_name LIKE 'Àå%';
+WHERE player_name LIKE 'ì¥%';
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
-WHERE player_name LIKE 'Àå_È£';
+WHERE player_name LIKE 'ì¥_í˜¸';

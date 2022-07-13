@@ -42,11 +42,11 @@ GROUP BY job
 HAVING SUM(sal) >5000
 ORDER BY SUM(sal);
 
-SELECT player.player_name ¼±¼ö¸í, team.team_name ¼Ò¼ÓÆÀ¸í
+SELECT player.player_name ì„ ìˆ˜ëª…, team.team_name ì†Œì†íŒ€ëª…
 FROM player, team
 WHERE team.team_id = player.team_id;
 
-SELECT player.player_name ¼±¼ö¸í, team.team_name ¼Ò¼ÓÆÀ¸í
+SELECT player.player_name ì„ ìˆ˜ëª…, team.team_name ì†Œì†íŒ€ëª…
 FROM player 
 INNER JOIN team
 ON team.team_id = player.team_id;
@@ -55,7 +55,7 @@ SELECT player.player_name, player.back_no, player.team_id, team.team_name, team.
 FROM player, team
 WHERE team.team_id = player.team_id;
 
-SELECT a.player_name ¼±¼ö¸í, a.back_no ¹é³Ñ¹ö, a.team_id ÆÀÄÚµå, b.team_name ÆÀ¸í, b.region_name ¿¬°íÁö
+SELECT a.player_name ì„ ìˆ˜ëª…, a.back_no ë°±ë„˜ë²„, a.team_id íŒ€ì½”ë“œ, b.team_name íŒ€ëª…, b.region_name ì—°ê³ ì§€
 FROM player a, team b
 WHERE b.team_id = a.team_id;
 

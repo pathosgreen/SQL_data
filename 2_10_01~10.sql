@@ -1,49 +1,49 @@
-SELECT COUNT(*) ÀüÃ¼Çà¼ö, COUNT(height) Å°°Ç¼ö,
-MAX(height) ÃÖ´ëÅ°, MIN (height) ÃÖ¼ÒÅ°, ROUND(AVG(height),2) Æò±ÕÅ°
+SELECT COUNT(*) ì „ì²´í–‰ìˆ˜, COUNT(height) í‚¤ê±´ìˆ˜,
+MAX(height) ìµœëŒ€í‚¤, MIN (height) ìµœì†Œí‚¤, ROUND(AVG(height),2) í‰ê· í‚¤
 FROM player;
 
-SELECT position Æ÷Áö¼Ç, AVG(height) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, AVG(height) í‰ê· í‚¤
 FROM player;
 
-SELECT position Æ÷Áö¼Ç, AVG(height) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, AVG(height) í‰ê· í‚¤
 FROM player
-GROUP BY Æ÷Áö¼Ç;
+GROUP BY í¬ì§€ì…˜;
 
-SELECT position Æ÷Áö¼Ç, COUNT(*) ÀÎ¿ø¼ö, COUNT(height) Å°´ë»ó,
-MAX (height) ÃÖ´ëÅ°, MIN (height) ÃÖ¼ÒÅ°, ROUND(AVG(height),2) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, COUNT(*) ì¸ì›ìˆ˜, COUNT(height) í‚¤ëŒ€ìƒ,
+MAX (height) ìµœëŒ€í‚¤, MIN (height) ìµœì†Œí‚¤, ROUND(AVG(height),2) í‰ê· í‚¤
 FROM player
 GROUP BY position;
 
-SELECT position Æ÷Áö¼Ç, ROUND(AVG(height),2) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, ROUND(AVG(height),2) í‰ê· í‚¤
 FROM player
 WHERE AVG (height) >= 180
 GROUP BY position;
 
-SELECT position Æ÷Áö¼Ç, ROUND(AVG(height),2) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, ROUND(AVG(height),2) í‰ê· í‚¤
 FROM player
 GROUP BY position
 HAVING AVG (height) >= 180;
 
-SELECT position Æ÷Áö¼Ç, ROUND(AVG(height),2) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, ROUND(AVG(height),2) í‰ê· í‚¤
 FROM player
 HAVING AVG (height) >= 180
 GROUP BY position;
 
-SELECT team_id ÆÀID, COUNT(*) ÀÎ¿ø¼ö
+SELECT team_id íŒ€ID, COUNT(*) ì¸ì›ìˆ˜
 FROM player
 WHERE team_id IN ('K09','K02')
 GROUP BY team_id;
 
-SELECT team_id ÆÀID, COUNT(*) ÀÎ¿ø¼ö
+SELECT team_id íŒ€ID, COUNT(*) ì¸ì›ìˆ˜
 FROM player
 GROUP BY team_id
 HAVING team_id IN ('K09','K02');
 
-SELECT position Æ÷Áö¼Ç, ROUND(AVG(height),2) Æò±ÕÅ°
+SELECT position í¬ì§€ì…˜, ROUND(AVG(height),2) í‰ê· í‚¤
 FROM player
 GROUP BY position
 HAVING MAX (height) >= 190;
 
-SELECT ename »ç¿ø¸í, deptno ºÎ¼­¹øÈ£,
-      EXTRACT(MONTH FROM hiredate) ÀÔ»ç¿ù, sal ±Ş¿©
+SELECT ename ì‚¬ì›ëª…, deptno ë¶€ì„œë²ˆí˜¸,
+      EXTRACT(MONTH FROM hiredate) ì…ì‚¬ì›”, sal ê¸‰ì—¬
 FROM emp;

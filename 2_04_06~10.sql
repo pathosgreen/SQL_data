@@ -1,4 +1,4 @@
-SELECT team_id ÆÀID,to_number(zip_code1, 999)+ TO_NUMBER(zip_code2, '999') AS ¿ìÆí¹øÈ£ÇÔ
+SELECT team_id íŒ€ID,to_number(zip_code1, 999)+ TO_NUMBER(zip_code2, '999') AS ìš°íŽ¸ë²ˆí˜¸í•¨
 FROM team;
 
 SELECT ename,

@@ -1,10 +1,10 @@
 /*
-    »ç¿ø Table »èÁ¦
+    ì‚¬ì› Table ì‚­ì œ
 */
 -- DROP TABLE EMP;
 
 /*
-    ºÎ¼­ Table »èÁ¦
+    ë¶€ì„œ Table ì‚­ì œ
 */
 -- DROP TABLE DEPT;
 
@@ -156,7 +156,7 @@ values(
 );
 
 /*
-   ºÎ¼­, »ç¿ø Å×ÀÌºíÀ» Á¶ÀÎÇÏ¿© »ç¿øº° ºÎ¼­ Á¤º¸¸¦ Á¶È¸ 
+   ë¶€ì„œ, ì‚¬ì› í…Œì´ë¸”ì„ ì¡°ì¸í•˜ì—¬ ì‚¬ì›ë³„ ë¶€ì„œ ì •ë³´ë¥¼ ì¡°íšŒ 
 */
 select ename, dname, job, empno, hiredate, loc  
 from emp, dept  
@@ -164,8 +164,8 @@ where emp.deptno = dept.deptno
 order by ename;
 
 /*
-   ºÎ¼­º° »ç¿ø¼ö Á¶È¸¸¦ Á¶È¸ÇÏ¿©
-   »ç¿øÀÌ ¸¹Àº ºÎ¼­º°·Î Á¤·ÄÇÑ´Ù.
+   ë¶€ì„œë³„ ì‚¬ì›ìˆ˜ ì¡°íšŒë¥¼ ì¡°íšŒí•˜ì—¬
+   ì‚¬ì›ì´ ë§ì€ ë¶€ì„œë³„ë¡œ ì •ë ¬í•œë‹¤.
 */
 select dname, count(*) count_of_employees
 from dept, emp

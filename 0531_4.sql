@@ -1,35 +1,35 @@
--- salary Çà ¼ö È®ÀÎ
-SELECT COUNT(salary) ÇàÀÇ¼ö
+-- salary í–‰ ìˆ˜ í™•ì¸
+SELECT COUNT(salary) í–‰ì˜ìˆ˜
 FROM employees;
--- salaryÀÇ ÇÕ°è¿Í Æò±Õ È®ÀÎ (avg »ç¿ë X)
-SELECT SUM(salary) ÇÕ°è,
-    AVG(salary) Æò±Õ,
-    SUM(salary)/COUNT(salary) °è»êµÈÆò±Õ
+-- salaryì˜ í•©ê³„ì™€ í‰ê·  í™•ì¸ (avg ì‚¬ìš© X)
+SELECT SUM(salary) í•©ê³„,
+    AVG(salary) í‰ê· ,
+    SUM(salary)/COUNT(salary) ê³„ì‚°ëœí‰ê· 
 FROM employees;
--- salaryÀÇ ÃÖ´ë°ª,ÃÖ¼Ò°ª ±¸ÇÏ°í first_nameµµ °°ÀÌ Ãâ·Â
-SELECT MAX(salary) ÃÖ´ë°ª,MIN(salary) ÃÖ¼Ò°ª,
-    MAX(first_name) ÃÖ´ë¹®ÀÚ°ª,MIN(first_name) ÃÖ¼Ò¹®ÀÚ°ª
+-- salaryì˜ ìµœëŒ€ê°’,ìµœì†Œê°’ êµ¬í•˜ê³  first_nameë„ ê°™ì´ ì¶œë ¥
+SELECT MAX(salary) ìµœëŒ€ê°’,MIN(salary) ìµœì†Œê°’,
+    MAX(first_name) ìµœëŒ€ë¬¸ìê°’,MIN(first_name) ìµœì†Œë¬¸ìê°’
 FROM employees;
--- employee_id°¡ 10 ÀÌ»óÀÎ Á÷¿øµéÀ» job_id±âÁØÀ¸·Î ±×·ìÈ­ÇÏ¿© job_idº° ÃÑ,Æò±Õ±Ş¿©¸¦
-SELECT job_id Á÷¹«, SUM(salary) Á÷¹«º°_ÃÑ±Ş¿©, AVG(salary) Á÷¹«º°_Æò±Õ±Ş¿©
+-- employee_idê°€ 10 ì´ìƒì¸ ì§ì›ë“¤ì„ job_idê¸°ì¤€ìœ¼ë¡œ ê·¸ë£¹í™”í•˜ì—¬ job_idë³„ ì´,í‰ê· ê¸‰ì—¬ë¥¼
+SELECT job_id ì§ë¬´, SUM(salary) ì§ë¬´ë³„_ì´ê¸‰ì—¬, AVG(salary) ì§ë¬´ë³„_í‰ê· ê¸‰ì—¬
 FROM employees
 WHERE employee_id >= 10
 GROUP BY job_id
-ORDER BY Á÷¹«º°_ÃÑ±Ş¿© DESC, Á÷¹«º°_Æò±Õ±Ş¿©;
+ORDER BY ì§ë¬´ë³„_ì´ê¸‰ì—¬ DESC, ì§ë¬´ë³„_í‰ê· ê¸‰ì—¬;
 
-SELECT job_id job_id_´ë±×·ì,manager_id manager_id_Áß±×·ì,
-    SUM(salary) ±×·ìº°_ÃÑ±Ş¿©, AVG(salary) ±×·ìº°_Æò±Õ±Ş¿©
+SELECT job_id job_id_ëŒ€ê·¸ë£¹,manager_id manager_id_ì¤‘ê·¸ë£¹,
+    SUM(salary) ê·¸ë£¹ë³„_ì´ê¸‰ì—¬, AVG(salary) ê·¸ë£¹ë³„_í‰ê· ê¸‰ì—¬
 FROM employees
 WHERE employee_id >= 10
 GROUP BY job_id,manager_id
-ORDER BY ±×·ìº°_ÃÑ±Ş¿© DESC, ±×·ìº°_Æò±Õ±Ş¿©;
+ORDER BY ê·¸ë£¹ë³„_ì´ê¸‰ì—¬ DESC, ê·¸ë£¹ë³„_í‰ê· ê¸‰ì—¬;
 
-SELECT job_id Á÷¹«, SUM(salary) Á÷¹«º°_ÃÑ±Ş¿©, AVG(salary) Á÷¹«º°_Æò±Õ±Ş¿©
+SELECT job_id ì§ë¬´, SUM(salary) ì§ë¬´ë³„_ì´ê¸‰ì—¬, AVG(salary) ì§ë¬´ë³„_í‰ê· ê¸‰ì—¬
 FROM employees
 WHERE employee_id >= 10
 GROUP BY job_id
 HAVING SUM(salary) >= 30000
-ORDER BY Á÷¹«º°_ÃÑ±Ş¿© DESC, Á÷¹«º°_Æò±Õ±Ş¿©;
+ORDER BY ì§ë¬´ë³„_ì´ê¸‰ì—¬ DESC, ì§ë¬´ë³„_í‰ê· ê¸‰ì—¬;
 
 SELECT a.first_name, a.last_name, b.*
 FROM employees A, job_history B
@@ -45,7 +45,7 @@ FROM employees A, departments B,locations C
 WHERE a.department_id = b.department_id
 AND b.location_id = c.location_id;
 
-SELECT COUNT(*) Á¶ÀÎµÈ°Ç¼ö
+SELECT COUNT(*) ì¡°ì¸ëœê±´ìˆ˜
 FROM employees A, departments B
 WHERE a.department_id = b.department_id;
 

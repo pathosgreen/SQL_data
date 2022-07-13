@@ -1,19 +1,19 @@
-SELECT b.team_name ÆÀ¸í, a.player_name ¼±¼ö¸í, a.back_no ¹é³Ñ¹ö
+SELECT b.team_name íŒ€ëª…, a.player_name ì„ ìˆ˜ëª…, a.back_no ë°±ë„˜ë²„
 FROM (SELECT *
       FROM player
       WHERE position = 'MF') a,
       team b
 WHERE b.team_id = a.team_id
-ORDER BY ¼±¼ö¸í;
+ORDER BY ì„ ìˆ˜ëª…;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜
 FROM (SELECT player_name, position, back_no, height
       FROM player
       WHERE height IS NOT NULL
       ORDER BY height DESC)
 WHERE ROWNUM <= 5;
 
-SELECT a.team_id ÆÀÄÚµå, b.team_name ÆÀ¸í, ROUND(AVG(a.height),3) Æò±ÕÅ°
+SELECT a.team_id íŒ€ì½”ë“œ, b.team_name íŒ€ëª…, ROUND(AVG(a.height),3) í‰ê· í‚¤
 FROM player a, team b
 WHERE b.team_id = a.team_id
 GROUP BY a.team_id, b.team_name
@@ -21,17 +21,17 @@ HAVING AVG(a.height) < (SELECT AVG(x.height)
                         FROM player x
                         WHERE x.team_id IN (SELECT team_id
                                             FROM team
-                                            WHERE team_name = '»ï¼ººí·çÀ®Áî'));
+                                            WHERE team_name = 'ì‚¼ì„±ë¸”ë£¨ìœ™ì¦ˆ'));
 
 SELECT player_name, position, back_no, team_id, team_name
 FROM v_player_team
-WHERE player_name LIKE 'È²%';
+WHERE player_name LIKE 'í™©%';
 
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
 UNION
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K07';
 
@@ -42,49 +42,49 @@ WHERE b.team_id = a.team_id;
 
 SELECT player_name, position, back_no, team_id, team_name
 FROM v_player_team
-WHERE player_name LIKE 'È²%';
+WHERE player_name LIKE 'í™©%';
 
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
 UNION
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position = 'GK';
 
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
 UNION ALL
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position = 'GK';
 
-SELECT ÆÀÄÚµå,¼±¼ö¸í,Æ÷Áö¼Ç,¹é³Ñ¹ö,Å°, COUNT(*) Áßº¹¼ö
-FROM (SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT íŒ€ì½”ë“œ,ì„ ìˆ˜ëª…,í¬ì§€ì…˜,ë°±ë„˜ë²„,í‚¤, COUNT(*) ì¤‘ë³µìˆ˜
+FROM (SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
       FROM player
       WHERE team_id = 'K02'
       UNION ALL
-      SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+      SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
       FROM player
       WHERE position = 'GK')
-GROUP BY ÆÀÄÚµå,¼±¼ö¸í,Æ÷Áö¼Ç,¹é³Ñ¹ö,Å°
+GROUP BY íŒ€ì½”ë“œ,ì„ ìˆ˜ëª…,í¬ì§€ì…˜,ë°±ë„˜ë²„,í‚¤
 HAVING COUNT (*) > 1;
 
-SELECT 'P' ±¸ºĞÄÚµå, position Æ÷Áö¼Ç, ROUND(AVG(height),3) Æò±ÕÅ°
+SELECT 'P' êµ¬ë¶„ì½”ë“œ, position í¬ì§€ì…˜, ROUND(AVG(height),3) í‰ê· í‚¤
 FROM player
 GROUP BY position
 UNION ALL
-SELECT 'T' ±¸ºĞÄÚµå, team_id ÆÀ¸í, ROUND(AVG(height),3) Æò±ÕÅ°
+SELECT 'T' êµ¬ë¶„ì½”ë“œ, team_id íŒ€ëª…, ROUND(AVG(height),3) í‰ê· í‚¤
 FROM player
 GROUP BY team_id
 ORDER BY 1;
 
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE team_id = 'K02'
 MINUS
-SELECT team_id ÆÀÄÚµå, player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT team_id íŒ€ì½”ë“œ, player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE position = 'MF'
 ORDER BY 1,2,3,4,5;

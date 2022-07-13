@@ -1,7 +1,7 @@
 SELECT *
 FROM employees
 ORDER BY commission_pct;
--- null∞™¿ª ∆˜«‘«œ¥¬ ªÍº˙ø¨ªÍ¿« ∞·∞˙ √‚∑¬
+-- nullÍ∞íÏùÑ Ìè¨Ìï®ÌïòÎäî ÏÇ∞Ïà†Ïó∞ÏÇ∞Ïùò Í≤∞Í≥º Ï∂úÎ†•
 SELECT salary * commission_pct
 FROM employees
 ORDER BY commission_pct;
@@ -11,34 +11,34 @@ FROM employees
 ORDER BY commission_pct;
 
 SELECT first_name,last_name,department_id,
-    salary ø¯∑°±ﬁø©,
-    DECODE(department_id,60,salary*1.1,salary) ¡∂¡§µ»±ﬁø©,
-    DECODE(department_id,60,'10% ¿ŒªÛ','πÃ¿ŒªÛ') ¿ŒªÛø©∫Œ
+    salary ÏõêÎûòÍ∏âÏó¨,
+    DECODE(department_id,60,salary*1.1,salary) Ï°∞Ï†ïÎêúÍ∏âÏó¨,
+    DECODE(department_id,60,'10% Ïù∏ÏÉÅ','ÎØ∏Ïù∏ÏÉÅ') Ïù∏ÏÉÅÏó¨Î∂Ä
 FROM employees;
 
 SELECT employee_id,first_name,last_name,salary,
     CASE
-        WHEN salary >= 9000 THEN 'ªÛ¿ß±ﬁø©'
-        WHEN salary BETWEEN 6000 AND 8999 THEN '¡ﬂ¿ß±ﬁø©'
-        ELSE '«œ¿ß±ﬁø©'
-    END AS ±ﬁø©µÓ±ﬁ
+        WHEN salary >= 9000 THEN 'ÏÉÅÏúÑÍ∏âÏó¨'
+        WHEN salary BETWEEN 6000 AND 8999 THEN 'Ï§ëÏúÑÍ∏âÏó¨'
+        ELSE 'ÌïòÏúÑÍ∏âÏó¨'
+    END AS Í∏âÏó¨Îì±Í∏â
 FROM employees
 WHERE job_id = 'IT_PROG';
 
 SELECT employee_id,
     salary,
-    RANK() OVER(ORDER BY salary DESC) RANK_±ﬁø©,
-    DENSE_RANK() OVER(ORDER BY salary DESC) DENSE_RANK_±ﬁø©,
-    ROW_NUMBER() OVER(ORDER BY salary DESC) ROW_NUMBER_±ﬁø©
+    RANK() OVER(ORDER BY salary DESC) RANK_Í∏âÏó¨,
+    DENSE_RANK() OVER(ORDER BY salary DESC) DENSE_RANK_Í∏âÏó¨,
+    ROW_NUMBER() OVER(ORDER BY salary DESC) ROW_NUMBER_Í∏âÏó¨
 FROM employees;
 
 SELECT A.employee_id,
     A.department_id,
     B.department_name,
     salary,
-    RANK() OVER(PARTITION BY A.department_id ORDER BY salary DESC) RANK_±ﬁø©,
-    DENSE_RANK() OVER(PARTITION BY A.department_id ORDER BY salary DESC) DENSE_RANK_±ﬁø©,
-    ROW_NUMBER() OVER(PARTITION BY A.department_id ORDER BY salary DESC) ROW_NUMBER_±ﬁø©
+    RANK() OVER(PARTITION BY A.department_id ORDER BY salary DESC) RANK_Í∏âÏó¨,
+    DENSE_RANK() OVER(PARTITION BY A.department_id ORDER BY salary DESC) DENSE_RANK_Í∏âÏó¨,
+    ROW_NUMBER() OVER(PARTITION BY A.department_id ORDER BY salary DESC) ROW_NUMBER_Í∏âÏó¨
 FROM employees A,departments B
 WHERE A.department_id=B.department_id
 ORDER BY B.department_id,A.salary DESC;

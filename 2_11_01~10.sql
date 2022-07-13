@@ -1,4 +1,4 @@
-SELECT ename »ç¿ø¸í, deptno ºÎ¼­¹øÈ£,
+SELECT ename ì‚¬ì›ëª…, deptno ë¶€ì„œë²ˆí˜¸,
        CASE MONTH WHEN 1 THEN sal END M01, CASE MONTH WHEN 2 THEN sal END M02,
        CASE MONTH WHEN 3 THEN sal END M03, CASE MONTH WHEN 4 THEN sal END M04,
        CASE MONTH WHEN 5 THEN sal END M05, CASE MONTH WHEN 6 THEN sal END M06,
@@ -9,7 +9,7 @@ SELECT ename »ç¿ø¸í, deptno ºÎ¼­¹øÈ£,
 FROM (SELECT ename, deptno, EXTRACT(MONTH FROM hiredate) MONTH, sal
       FROM emp);
       
-SELECT deptno ºÎ¼­¹øÈ£,
+SELECT deptno ë¶€ì„œë²ˆí˜¸,
        AVG(CASE MONTH WHEN 1 THEN sal END) M01, AVG(CASE MONTH WHEN 2 THEN sal END) M02,
        AVG(CASE MONTH WHEN 3 THEN sal END) M03, AVG(CASE MONTH WHEN 4 THEN sal END) M04,
        AVG(CASE MONTH WHEN 5 THEN sal END) M05, AVG(CASE MONTH WHEN 6 THEN sal END) M06,
@@ -21,7 +21,7 @@ FROM (SELECT ename, deptno, EXTRACT(MONTH FROM hiredate) MONTH, sal
       FROM emp)
 GROUP BY deptno;
 
-SELECT deptno ºÎ¼­¹øÈ£,
+SELECT deptno ë¶€ì„œë²ˆí˜¸,
        AVG(DECODE(MONTH, 1, sal)) M01, AVG(DECODE(MONTH, 2, sal)) M02,
        AVG(DECODE(MONTH, 3, sal)) M03, AVG(DECODE(MONTH, 4, sal)) M04,
        AVG(DECODE(MONTH, 5, sal)) M05, AVG(DECODE(MONTH, 6, sal)) M06,
@@ -60,27 +60,27 @@ SELECT team_id,
 FROM player
 GROUP BY team_id;
 
-SELECT ROUND(AVG(CASE WHEN position = 'MF' THEN height END), 2) ¹ÌµåÇÊ´õ,
-       ROUND(AVG(CASE WHEN position = 'FW' THEN height END), 2) Æ÷¿öµå,
-       ROUND(AVG(CASE WHEN position = 'DF' THEN height END), 2) µðÆæ´õ,
-       ROUND(AVG(CASE WHEN position = 'GK' THEN height END), 2) °ñÅ°ÆÛ,
-       ROUND(AVG(HEIGHT), 2) ÀüÃ¼Æò±ÕÅ°
+SELECT ROUND(AVG(CASE WHEN position = 'MF' THEN height END), 2) ë¯¸ë“œí•„ë”,
+       ROUND(AVG(CASE WHEN position = 'FW' THEN height END), 2) í¬ì›Œë“œ,
+       ROUND(AVG(CASE WHEN position = 'DF' THEN height END), 2) ë””íŽœë”,
+       ROUND(AVG(CASE WHEN position = 'GK' THEN height END), 2) ê³¨í‚¤í¼,
+       ROUND(AVG(HEIGHT), 2) ì „ì²´í‰ê· í‚¤
 FROM player;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„
 FROM player
 ORDER BY player_name DESC;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„
 FROM player
-ORDER BY Æ÷Áö¼Ç DESC;
+ORDER BY í¬ì§€ì…˜ DESC;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö, height Å°
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„, height í‚¤
 FROM player
 WHERE height IS NOT NULL
 ORDER BY height DESC, back_no;
 
-SELECT player_name ¼±¼ö¸í, position Æ÷Áö¼Ç, back_no ¹é³Ñ¹ö
+SELECT player_name ì„ ìˆ˜ëª…, position í¬ì§€ì…˜, back_no ë°±ë„˜ë²„
 FROM player
 WHERE back_no IS NOT NULL
 ORDER BY 3 DESC, 2, 1;

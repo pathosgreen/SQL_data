@@ -10,15 +10,15 @@ SELECT *
 FROM departments
 WHERE department_name = 'Sample_Dept';
 
--- department_id¿¡´Â nullÀÌ ÀÔ·ÂµÉ ¼ö ¾ø±â ¶§¹®¿¡ ¿À·ù ¹ß»ı.
+-- department_idì—ëŠ” nullì´ ì…ë ¥ë  ìˆ˜ ì—†ê¸° ë•Œë¬¸ì— ì˜¤ë¥˜ ë°œìƒ.
 UPDATE departments
 SET department_id = null
 WHERE departments_name = 'Sample_Dept';
 
--- ÀÏ¹İÀûÀÎ ¹æ¹ı
+-- ì¼ë°˜ì ì¸ ë°©ë²•
 DELETE FROM departments 
 WHERE department_name = 'Sample_Dept';
--- ¼­ºêÄõ¸® ¹æ¹ı
+-- ì„œë¸Œì¿¼ë¦¬ ë°©ë²•
 DELETE FROM departments
 WHERE department_id IN (SELECT department_id
                         FROM departments
@@ -30,17 +30,17 @@ ORDER BY department_id DESC;
 
 COMMIT;
 
--- 1. ±âº»Å° Á¦¾àÁ¶°Ç - µ¥ÀÌÅÍ Áßº¹ ºÒÇã
+-- 1. ê¸°ë³¸í‚¤ ì œì•½ì¡°ê±´ - ë°ì´í„° ì¤‘ë³µ ë¶ˆí—ˆ
 INSERT INTO departments
 VALUES(1000, 'Sample_Dept', 200, 1700);
 
--- 2. ¿Ü·¡Å° Á¦¾à Á¶°Ç : ¿­ °ªÀÌ ºÎ¸ğ Å×ÀÌºíÀÇ ÂüÁ¶ ¿­ÀÇ °ªÀ» ¹İµå½Ã ÂüÁ¶
--- 111Àº ºÎ¸ğÅ×ÀÌºíÀÇ Çà¿¡ Á¸ÀçÇÏÁö ¾ÊÀ½.
+-- 2. ì™¸ë˜í‚¤ ì œì•½ ì¡°ê±´ : ì—´ ê°’ì´ ë¶€ëª¨ í…Œì´ë¸”ì˜ ì°¸ì¡° ì—´ì˜ ê°’ì„ ë°˜ë“œì‹œ ì°¸ì¡°
+-- 111ì€ ë¶€ëª¨í…Œì´ë¸”ì˜ í–‰ì— ì¡´ì¬í•˜ì§€ ì•ŠìŒ.
 INSERT INTO departments(department_id,department_name,manager_id,location_id)
 VALUES(273, 'Sample_Dept', 200, 111);
 
--- 3. À¯ÀÏÅ° : Áßº¹Àº Çã¶ôÇÏÁö ¾ÊÁö¸¸ (null)°ª Çã¿ë°¡´É
--- 'SKING'°¡ Áßº¹ÀÔ·ÂµÇ¾î ¿À·ù ¹ß»ı
+-- 3. ìœ ì¼í‚¤ : ì¤‘ë³µì€ í—ˆë½í•˜ì§€ ì•Šì§€ë§Œ (null)ê°’ í—ˆìš©ê°€ëŠ¥
+-- 'SKING'ê°€ ì¤‘ë³µì…ë ¥ë˜ì–´ ì˜¤ë¥˜ ë°œìƒ
 INSERT INTO employees(employee_id,first_name,last_name,email,
                       phone_number,hire_date,job_id,salary)
 VALUES(207, 'first_name','last_name','SKING','111.11.11',TO_DATE('030617','YYMMDD'),'IT_PROG',6000);
@@ -49,17 +49,17 @@ SELECT *
 FROM employees
 WHERE email = 'SKING';
 
--- 4. NOT NULL : null°ªÀ» Çã¿ëÇÏÁö ¾ÊÀ½
+-- 4. NOT NULL : nullê°’ì„ í—ˆìš©í•˜ì§€ ì•ŠìŒ
 INSERT INTO departments(department_id,department_name,manager_id,location_id)
 VALUES(273,NULL, 200, 700);
 
--- 5. CHECK : ¹üÀ§³ª Á¶°Çµî ÁöÁ¤µÈ °ª¸¸ Çã¿ë
--- ¸Ç ³¡ÀÇ °ªÀº 0À» ÃÊ°úÇÏ´Â °ª¸¸ Çã¿ë
+-- 5. CHECK : ë²”ìœ„ë‚˜ ì¡°ê±´ë“± ì§€ì •ëœ ê°’ë§Œ í—ˆìš©
+-- ë§¨ ëì˜ ê°’ì€ 0ì„ ì´ˆê³¼í•˜ëŠ” ê°’ë§Œ í—ˆìš©
 INSERT INTO employees(employee_id,first_name,last_name,email,
                       phone_number,hire_date,job_id,salary)
 VALUES(209, 'first_name','last_name','TEST','111.11.11',TO_DATE('030617','YYMMDD'),'IT_PROG',0);
 
--- Å×ÀÌºí »ı¼º
+-- í…Œì´ë¸” ìƒì„±
 CREATE TABLE sample_product(
                             product_id number,
                             product_name VARCHAR2(30),
@@ -80,16 +80,16 @@ ALTER TABLE sample_product ADD(factory varchar(10));
 
 ALTER TABLE sample_product MODIFY(factory char(8));
 
--- µ¥ÀÌÅÍº¸´Ù ¿­ÀÇ Å©±â¸¦ ÀÛ°Ô º¯°æÇÏ¸é ¿À·ù ¹ß»ı
+-- ë°ì´í„°ë³´ë‹¤ ì—´ì˜ í¬ê¸°ë¥¼ ì‘ê²Œ ë³€ê²½í•˜ë©´ ì˜¤ë¥˜ ë°œìƒ
 ALTER TABLE sample_product MODIFY(product_name char(5));
 
 ALTER TABLE sample_product RENAME COLUMN factory TO factory_name;
 
--- ¿­ »èÁ¦
+-- ì—´ ì‚­ì œ
 ALTER TABLE sample_product DROP COLUMN factory_name;
--- ³»¿ë »èÁ¦
+-- ë‚´ìš© ì‚­ì œ
 TRUNCATE TABLE sample_product;
--- Å×ÀÌºí »èÁ¦
+-- í…Œì´ë¸” ì‚­ì œ
 DROP TABLE sample_product;
 
 

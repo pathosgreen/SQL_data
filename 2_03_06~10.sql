@@ -1,18 +1,18 @@
-SELECT team_id ΖΐID,
-       CAST(zip_code1 AS INT)+CAST(zip_code2 AS INT) ΏμΖνΉψΘ£ΗΥ
+SELECT team_id ν€ID,
+       CAST(zip_code1 AS INT)+CAST(zip_code2 AS INT) μ°νΈλ²νΈν•©
 FROM team;
 
 SELECT SYSDATE
 FROM Dual;
 
-SELECT ename »ηΏψΈν, hiredate ΐΤ»ηΐΟΐΪ, 
-       EXTRACT(YEAR FROM hiredate) ΐΤ»η³βµµ,
-       EXTRACT(MONTH FROM hiredate) ΐΤ»ηΏω,
-       EXTRACT(DAY FROM hiredate) ΐΤ»ηΐΟ
+SELECT ename μ‚¬μ›λª…, hiredate μ…μ‚¬μΌμ, 
+       EXTRACT(YEAR FROM hiredate) μ…μ‚¬λ…„λ„,
+       EXTRACT(MONTH FROM hiredate) μ…μ‚¬μ›”,
+       EXTRACT(DAY FROM hiredate) μ…μ‚¬μΌ
 FROM emp;
 
-SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD') ³―Β¥,
-       TO_CHAR(SYSDATE, 'YYYY.MON,DAY') Ή®ΐΪΗό
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD') λ‚ μ§,
+       TO_CHAR(SYSDATE, 'YYYY.MON,DAY') λ¬Έμν•
 FROM DUAL;
 
 SELECT ename, ROUND(sal/12) SAL_ROUND, CEIL(sal/12) SAL_CEIL
