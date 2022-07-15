@@ -68,9 +68,15 @@ SELECT COUNT(comm)
 FROM emp
 WHERE comm IS NOT NULL;
 -- 부서 번호가 20인 사원의 입사일중 제일 최근 입사일
-SELECT MAX((hiredate))
+SELECT MAX(to_char(hiredate))
 FROM emp
 WHERE deptno = 20;
+
+SELECT hiredate
+FROM (SELECT *
+      FROM emp
+      ORDER BY hiredate)
+WHERE rownum=1;
 
 SELECT *
 FROM emp
